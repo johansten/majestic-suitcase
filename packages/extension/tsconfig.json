@@ -1,0 +1,15 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+      "jsx": "preserve",
+      "lib": [
+        "es6", "dom"
+      ],
+      "outDir": "build",
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+    ],
+  }
+   

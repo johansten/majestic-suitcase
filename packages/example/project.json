@@ -1,0 +1,24 @@
+{
+    "name": "example",
+    "sourceRoot": "packages/example/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nx/vite:build",
+            "options": {
+                "outputPath": "packages/example/dist",
+                "tsConfig": "packages/example/tsconfig.json",
+                "packageJson": "packages/example/package.json",
+                "main": "packages/example/src/index.ts",
+                "rootDir": "packages/example",
+                "assets": ["packages/example/*.md"]
+            }
+        },
+        "start": {
+            "executor": "@nx/js:node",
+            "options": {
+                "buildTarget": "example:build"
+            }
+        }
+    }
+}

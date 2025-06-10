@@ -1,0 +1,24 @@
+{
+    "name": "react",
+    "sourceRoot": "packages/react/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "options": {
+                "outputPath": "packages/react/lib",
+                "tsConfig": "packages/react/tsconfig.json",
+                "packageJson": "packages/react/package.json",
+                "main": "packages/react/src/index.ts",
+                "rootDir": "packages/react/src",
+                "assets": ["packages/react/*.md"]
+            }
+        },
+        "start": {
+            "executor": "@nx/js:node",
+            "options": {
+                "buildTarget": "react:build"
+            }
+        }
+    }
+}

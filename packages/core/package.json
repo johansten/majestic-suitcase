@@ -1,0 +1,20 @@
+{
+  "name": "@majestic-suitcase/core",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Johan Stén <johan@futuretense.io>",
+  "type": "module",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@wallet-standard/base": "^1.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

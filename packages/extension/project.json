@@ -1,0 +1,38 @@
+{
+  "name": "extension",
+  "sourceRoot": "packages/extension/src",
+  "projectType": "library",
+  "targets": {
+    "tsc": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/extension/build",
+        "tsConfig": "packages/extension/tsconfig.json",
+        "main": "packages/extension/src/index.ts",
+        "clean": true
+      }
+    },
+    "esbuild": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/extension/dist",
+        "command": "node build-esbuild.js",
+        "cwd": "packages/extension"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/extension/dist",
+        "commands": [
+          "nx run extension:tsc",
+          "nx run extension:esbuild"
+        ],
+        "parallel": false
+      }
+    }
+  }
+}

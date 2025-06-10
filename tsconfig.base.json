@@ -1,0 +1,14 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": false,
+    "declaration": true,
+    "moduleResolution": "NodeNext",
+    "target": "es2020",
+    "module": "NodeNext",
+    "lib": ["es2020"],
+    "skipLibCheck": true,
+    "baseUrl": "../../"
+  },
+  "exclude": ["node_modules"]
+}

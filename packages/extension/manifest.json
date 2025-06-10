@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Stellar Standard Wallet test",
+    "description": "Just a test",
+    "version": "1.0",
+    "permissions": ["storage", "tabs", "activeTab", "notifications", "webNavigation"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "dist/background.js"
+    },
+    "action": {
+        "default_icon": "images/bullseye-64.png"
+    },
+    "icons": {
+        "64": "images/bullseye-64.png"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["dist/content.js"],
+        "run_at": "document_start"
+    }],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self'"
+    },
+    "web_accessible_resources": [{
+        "matches": [ "<all_urls>" ],
+        "resources": [ "dist/inpage.js" ]
+    }]
+}
